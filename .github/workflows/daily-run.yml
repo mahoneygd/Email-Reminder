@@ -3,7 +3,7 @@ name: Daily Reminder Emails
 on:
   schedule:
     - cron: '15 4 * * *'  # Runs daily at 04:15 UTC
-  workflow_dispatch: {}    # Allows manual triggering
+  workflow_dispatch: {}
 
 jobs:
   send-reminders:
@@ -18,11 +18,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Download Secret Data JSON Artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: secret-json   # This is the artifact name you uploaded
-        path: ./data        # This will place secret.json into ./data/secret.json
+    - name: Decode Secret JSON from Base64
+      run: |
+        mkdir -p data
+        echo "${{ secrets.EVENT_JSON_B64 }}" | base64 -d > data/event.json
 
     - name: Create SMTP Config JSON
       env:
