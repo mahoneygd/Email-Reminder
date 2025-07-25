@@ -1,0 +1,14 @@
+[
+  {
+    "title": "John's Birthday",
+    "date": "2025-07-25",
+    "email": "john@example.com",
+    "type": "birthday"
+  },
+  {
+    "title": "Team Meeting",
+    "date": "2025-07-26",
+    "email": "team@example.com",
+    "type": "meeting"
+  }
+]
