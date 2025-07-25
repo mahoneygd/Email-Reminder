@@ -1,7 +1,9 @@
 [
   {
     "title": "John's Birthday",
-    "date": "2025-07-25",
+    "date": {
+        "day":
+    },
     "email": "john@example.com",
     "type": "birthday"
   },
