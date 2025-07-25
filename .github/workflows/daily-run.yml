@@ -30,6 +30,12 @@ jobs:
       run: |
         echo "{\"smtp_host\": \"smtp.gmail.com\", \"smtp_port\": 587, \"smtp_user\": \"${SMTP_USER}\", \"smtp_pass\": \"${SMTP_PASS}\"}" > data/config.json
 
+    - name: Show events.json (Debugging)
+      run: |
+        echo "Contents of data/events.json:"
+        cat data/events.json
+
+
     - name: Run Reminder App
       run: |
         python src/reminder.py
