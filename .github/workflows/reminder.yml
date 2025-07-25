@@ -25,4 +25,4 @@ jobs:
       run: |
         mkdir -p data
         echo "{\"smtp_host\": \"smtp.gmail.com\", \"smtp_port\": 587, \"smtp_user\": \"${SMTP_USER}\", \"smtp_pass\": \"${SMTP_PASS}\"}" > data/config.json
-        python src/reminder_app.py
+        python src/reminder.py
