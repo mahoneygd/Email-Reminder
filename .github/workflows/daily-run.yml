@@ -2,8 +2,8 @@ name: Daily Reminder Emails
 
 on:
   schedule:
-    - cron: '15 4 * * *'
-  workflow_dispatch: {}
+    - cron: '15 4 * * *'  # Runs daily at 04:15 UTC
+  workflow_dispatch: {}    # Allows manual triggering
 
 jobs:
   send-reminders:
@@ -18,11 +18,19 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Run Reminder App
+    - name: Download Secret Data JSON Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: secret-json   # This is the artifact name you uploaded
+        path: ./data        # This will place secret.json into ./data/secret.json
+
+    - name: Create SMTP Config JSON
       env:
         SMTP_USER: ${{ secrets.SMTP_USER }}
         SMTP_PASS: ${{ secrets.SMTP_PASS }}
       run: |
-        mkdir -p data
         echo "{\"smtp_host\": \"smtp.gmail.com\", \"smtp_port\": 587, \"smtp_user\": \"${SMTP_USER}\", \"smtp_pass\": \"${SMTP_PASS}\"}" > data/config.json
+
+    - name: Run Reminder App
+      run: |
         python src/reminder.py
