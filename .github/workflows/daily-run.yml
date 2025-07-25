@@ -35,6 +35,12 @@ jobs:
         echo "Contents of data/events.json:"
         cat data/events.json
 
+    - name: Debug decode
+      run: |
+        echo "Decoding secret:"
+        echo "${{ secrets.EVENTS_JSON_B64 }}" | head -c 60
+        echo "${{ secrets.EVENTS_JSON_B64 }}" | base64 -d | head -c 100
+
 
     - name: Run Reminder App
       run: |
