@@ -3,7 +3,7 @@ name: Daily Reminder Emails
 on:
   schedule:
     - cron: '15 4 * * *'
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   send-reminders:
@@ -19,7 +19,7 @@ jobs:
         python-version: '3.x'
 
     - name: Run Reminder App
-    env:
+      env:
         SMTP_USER: ${{ secrets.SMTP_USER }}
         SMTP_PASS: ${{ secrets.SMTP_PASS }}
       run: |
