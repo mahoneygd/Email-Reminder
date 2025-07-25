@@ -21,7 +21,7 @@ jobs:
     - name: Decode Secret JSON from Base64
       run: |
         mkdir -p data
-        echo "${{ secrets.EVENT_JSON_B64 }}" | base64 -d > data/events.json
+        echo "${{ secrets.EVENTS_JSON_B64 }}" | base64 -d > data/events.json
 
     - name: Create SMTP Config JSON
       env:
