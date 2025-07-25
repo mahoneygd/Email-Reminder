@@ -14,8 +14,10 @@ def load_config():
         return json.load(f)
 
 def check_due_events(events):
-    today = datetime.today().strftime('%Y-%m-%d')
-    due_events = [event for event in events if event['date'] == today]
+    current_month = datetime.today().month
+    current_day = datetime.today().day
+    due_events = [event for event in events
+                    if event['date']['day'] == current_day and event['date']['month'] == current_month]
     return due_events
 
 def process_reminders():
@@ -23,10 +25,14 @@ def process_reminders():
     config = load_config()
     due_events = check_due_events(events)
 
-    for event in due_events:
-        subject = f"Reminder: {event['title']}"
-        body = f"Hi! This is a reminder for {event['title']} scheduled on {event['date']}."
-        send_email(config, event['email'], subject, body)
+    if not due_events:
+        return
+
+    subject = "Today's Reminders"
+    body_lines = [f"- {event['title']}'s ({event['type']})" for event in due_events]
+    body = "Hi! Here are your reminders for today:\n\n" + "\n".join(body_lines)
+
+    send_email(config, config['smtp_user'], subject, body)
 
 if __name__ == '__main__':
     process_reminders()
