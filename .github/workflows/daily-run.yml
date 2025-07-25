@@ -39,6 +39,7 @@ jobs:
       run: |
         echo "Decoding secret:"
         echo "${{ secrets.EVENTS_JSON_B64 }}" | head -c 60
+        echo "${{ secrets.SMTP_USER }}" | head -c 60
         echo "${{ secrets.EVENTS_JSON_B64 }}" | base64 -d | head -c 100
 
 
