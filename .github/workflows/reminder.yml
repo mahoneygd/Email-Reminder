@@ -2,7 +2,7 @@ name: Daily Reminder Emails
 
 on:
   schedule:
-    - cron: '45 20 * * *'
+    - cron: '15 22 * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,5 +19,10 @@ jobs:
         python-version: '3.x'
 
     - name: Run Reminder App
+    env:
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASS: ${{ secrets.SMTP_PASS }}
       run: |
+        mkdir -p data
+        echo "{\"smtp_host\": \"smtp.gmail.com\", \"smtp_port\": 587, \"smtp_user\": \"${SMTP_USER}\", \"smtp_pass\": \"${SMTP_PASS}\"}" > data/config.json
         python reminder_app.py
