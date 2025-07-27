@@ -5,7 +5,7 @@ from email_sender import send_email
 # Constants for file paths and notice days
 EVENTS_FILE = 'data/events.json'
 CONFIG_FILE = 'data/config.json'
-NOTICE = -1  # Number of days ahead to notify, -1 means notify for all upcoming events regardless of days left
+NOTICE = 3  # Number of days ahead to notify, -1 means notify for all upcoming events regardless of days left
 
 def load_events():
     """Load events data from the JSON file."""
