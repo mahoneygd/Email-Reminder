@@ -1,16 +1,102 @@
 [
   {
-    "title": "John's Birthday",
-    "date": {
-        "day":
-    },
-    "email": "john@example.com",
-    "type": "birthday"
+    "title": "Alice",
+    "date": { "day": 15, "month": 1, "year": 1990 },
+    "type": "Birthday"
   },
   {
-    "title": "Team Meeting",
-    "date": "2025-07-26",
-    "email": "team@example.com",
-    "type": "meeting"
+    "title": "Bob",
+    "date": { "day": 5, "month": 2, "year": 1985 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Charlie",
+    "date": { "day": 20, "month": 3, "year": 2000 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Diana",
+    "date": { "day": 10, "month": 4, "year": 1995 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Ethan",
+    "date": { "day": 25, "month": 5, "year": 1988 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Fiona",
+    "date": { "day": 12, "month": 6, "year": 1992 },
+    "type": "Birthday"
+  },
+  {
+    "title": "George",
+    "date": { "day": 3, "month": 7, "year": 1999 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Hannah",
+    "date": { "day": 18, "month": 8, "year": 1991 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Ivan",
+    "date": { "day": 29, "month": 9, "year": 1983 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Julia",
+    "date": { "day": 7, "month": 10, "year": 1997 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Kevin",
+    "date": { "day": 21, "month": 11, "year": 1994 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Laura",
+    "date": { "day": 13, "month": 12, "year": 1987 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Mike & Sarah",
+    "date": { "day": 14, "month": 2, "year": 2010 },
+    "type": "Anniversary"
+  },
+  {
+    "title": "Nina & Tom",
+    "date": { "day": 30, "month": 6, "year": 2005 },
+    "type": "Anniversary"
+  },
+  {
+    "title": "Oscar",
+    "date": { "day": 9, "month": 1, "year": 1993 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Paula",
+    "date": { "day": 24, "month": 3, "year": 1996 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Quentin",
+    "date": { "day": 11, "month": 5, "year": 1989 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Rachel",
+    "date": { "day": 19, "month": 7, "year": 1998 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Steve",
+    "date": { "day": 2, "month": 9, "year": 1990 },
+    "type": "Birthday"
+  },
+  {
+    "title": "Tina",
+    "date": { "day": 6, "month": 11, "year": 1992 },
+    "type": "Birthday"
   }
 ]

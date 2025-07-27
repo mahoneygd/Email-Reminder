@@ -2,7 +2,7 @@ name: Daily Reminder Emails
 
 on:
   schedule:
-    - cron: '15 4 * * *'  # Runs daily at 04:15 UTC
+    - cron: '15 4 * * *'  # Runs daily at 04:15 UTC or 00:15 EST
   workflow_dispatch: {}
 
 jobs:
@@ -29,19 +29,6 @@ jobs:
         SMTP_PASS: ${{ secrets.SMTP_PASS }}
       run: |
         echo "{\"smtp_host\": \"smtp.gmail.com\", \"smtp_port\": 587, \"smtp_user\": \"${SMTP_USER}\", \"smtp_pass\": \"${SMTP_PASS}\"}" > data/config.json
-
-    - name: Show events.json (Debugging)
-      run: |
-        echo "Contents of data/events.json:"
-        cat data/events.json
-
-    - name: Debug decode
-      run: |
-        echo "Decoding secret:"
-        echo "${{ secrets.EVENTS_JSON_B64 }}" | head -c 60
-        echo "${{ secrets.SMTP_USER }}" | head -c 60
-        echo "${{ secrets.EVENTS_JSON_B64 }}" | base64 -d | head -c 100
-
 
     - name: Run Reminder App
       run: |

@@ -2,6 +2,5 @@
   "smtp_host": "smtp.gmail.com",
   "smtp_port": 587,
   "smtp_user": "your_email@gmail.com",
-  "smtp_pass": "your_app_specific_password",
-  "day_notice": 1 
+  "smtp_pass": "your_app_specific_password"
 }
